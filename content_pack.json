@@ -1,0 +1,15 @@
+{
+  "name":"Rundeck Jobs Log GROK pattern for Graylog (@zionio 2018)",
+  "description":"Graylog Grok pattern for Rundeck (>=2.6.x) jobs logs",
+  "category":"Grok",
+  "inputs":[],
+  "streams":[],
+  "outputs":[],
+  "dashboards":[],
+  "grok_patterns":[
+    {
+      "name":"RUNDECKJOBSLOG",
+      "pattern":"\\[%{TIMESTAMP_ISO8601:rundeck_job_timestamp}\\] %{USERNAME:rundeck_job_user} %{WORD:rundeck_job_action} \\[%{DATA:rundeck_job_id}\\] %{WORD:rundeck_job_project} \\\"%{DATA:rundeck_job_jobname}\\\" \\(%{WORD:rundeck_job_commit}\\)"
+    }
+  ]
+}
